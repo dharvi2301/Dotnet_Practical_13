@@ -1,0 +1,47 @@
+﻿﻿@model Practical_13.Models.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h4 class="text-center">Employee Details</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-4 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.DOB)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.DOB)
+                </dd>
+
+                <dt class="col-sm-4 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.Age)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Age)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary ml-2" })
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        max-width: 600px;
+    }
+</style>
