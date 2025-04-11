@@ -1,0 +1,35 @@
+﻿﻿@model Test_2.Models.Designation
+
+@{
+    ViewBag.Title = "Delete Designation";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg border-danger">
+        <div class="card-header bg-danger text-white">
+            <h4 class="text-center">Confirm Deletion</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="text-center text-muted">Are you sure you want to delete this Designation?</h5>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4 font-weight-bold">Designation Name:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-danger px-4">Delete</button>
+                    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-secondary px-4" })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
